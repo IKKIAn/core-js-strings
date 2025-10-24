@@ -467,7 +467,21 @@ function extractEmails(str) {
  *    => 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm'
  *
  */
-
+function encodeToRot13(str) {
+  const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+  const rot13Alphabet = 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm';
+  let result = '';
+  for (let i = 0; i < str.length; i += 1) {
+    const char = str[i];
+    const index = alphabet.indexOf(char);
+    if (index !== -1) {
+      result += rot13Alphabet[index];
+    } else {
+      result += char;
+    }
+  }
+  return result;
+}
 
 /**
  * Returns playid card id.
