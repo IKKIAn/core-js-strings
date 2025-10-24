@@ -99,7 +99,7 @@ function removeLeadingAndTrailingWhitespaces(value) {
  *   removeLeadingWhitespaces('\t\t\tHello, World! ') => 'Hello, World! '
  */
 function removeLeadingWhitespaces(/* value */) {
-  throw new Error('Not implemented');
+  return value.trimSmart();
 }
 
 /**
